@@ -16,7 +16,6 @@ export class NaicsService {
       dirname(dirname(__dirname)) +
         '/home assignment/NAICS_2-6_digit_2022_Codes.csv',
     );
-    console.time('csv');
     const entities = await this.csvParser.parse(
       stream,
       Entity,
@@ -24,7 +23,6 @@ export class NaicsService {
       undefined,
       { separator: ',' },
     );
-    console.timeEnd('csv');
     return entities;
   }
 }

@@ -17,6 +17,6 @@ describe('NaicsController', () => {
   });
 
   it('should return csv output', async () => {
-    expect(await controller.getNaics()).toBeTruthy();
+    expect((await controller.getNaics()).total).toBe(2125);
   });
 });
